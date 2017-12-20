@@ -1,11 +1,15 @@
+{% include 'base.html' %}
+
 {% block body %}
 
-    <h2 style="font-family: 'Pacifico', cursive;">Post an Item</h2>
+    <h2 style="font-family: 'Pacifico', cursive;" align='center'>Add an Item</h2>
 
     <form name = "form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Post" class="btn btn-info">
+        <div class='fields' align='center'>
+        	{{ form.as_p }}
+        	<input type="submit" value="Post" class="btn cust-btn">
+    	</div>
     </form>
 
 {% endblock %}
