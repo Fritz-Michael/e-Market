@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load modulo %}
+{% block body %}
+<div class = "posts-container container">
+	<div class = "row table-row" style="font-family: 'Open Sans', sans-serif;">
+		{% for item in items %}
+		<div class = "col-sm-3 container">
+		    <div class="thumbnail">
+		        <div class = "caption">
+		            <h2 style="font-family: 'Open Sans', sans-serif;">{{ item.name }}</h2>
+		        </div>
+		            <img src="{{ item.thumbnail.url }}" class="img-responsive">
+		        <div class = "caption">
+		          <h4 style="font-family: 'Open Sans', sans-serif;">Price: Php{{ item.retail_price }}</h4>
+		          <h4 style="font-family: 'Open Sans', sans-serif;">{{ item.description }}</h4>
+		        </div>
+		    </div>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+{% endblock %}

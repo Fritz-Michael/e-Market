@@ -7,7 +7,7 @@ class HomeView(View):
 
 	def get(self, request):
 		items = Products.objects.all()
-		return redirect(request,'productlist.html',{'items':items})
+		return render(request,'home.html',{'items':items})
 
 
 class ProductsView(View):
@@ -33,4 +33,4 @@ class AddProductView(View):
 		else:
 			print('Inalid form')
 			print(add_product_form.errors.as_data())		
-		return redirect('ZeaBelleGoods:home')
+		return redirect('ZeaBelleGoods:addproduct')

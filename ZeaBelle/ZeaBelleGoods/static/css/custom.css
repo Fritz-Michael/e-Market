@@ -28,3 +28,35 @@ input:not([type=submit]):not([type=file]) {
     background: rgba(66,244,116,0.5);
     margin: 0 0 10px 0;
 }
+
+.thumbnail{
+    height: 300px;
+    overflow: hidden;
+}
+
+.thumbnail img{
+    height: 100%;
+    width: auto;
+    max-height: 50%;
+    max-width: 50%
+}
+
+.caption h2{
+    font-family: 'Roboto';
+    font-size: 1em;
+}
+
+.caption h4{
+    font-family: 'Roboto';
+    font-size: 1em;
+}
+
+.row {
+    display: table;
+}
+
+[class*="col-"] {
+    float: none;
+    display: table-cell;
+    vertical-align: top;
+}

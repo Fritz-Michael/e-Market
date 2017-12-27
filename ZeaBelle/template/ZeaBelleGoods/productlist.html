@@ -1,4 +1,27 @@
 {% include 'base.html' %}
-{% for item in items %}
-	<p> {{item.name}} </p>
-{% endfor %}
+<div class="container">      
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Unit Price</th>
+        <th>Retail Price</th>
+        <th>Quantity</th>
+        <th>Description</th>
+        <th> </th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in items %}
+      <tr>
+        <td> {{item.name}} </td>
+        <td> {{item.unit_price}} </td>
+        <td> {{item.retail_price}} </td>
+        <td> {{item.quantity}} </td>
+        <td> {{item.description}} </td>
+        <td> <button>edit</button><button>add</button> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

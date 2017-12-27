@@ -5,7 +5,7 @@ from ZeaBelleGoods.views import *
 admin.autodiscover()
 app_name = 'ZeaBelleGoods'
 urlpatterns = [
-    #url(r'^home', HomeView.as_view(), name='home'),
-    url(r'^$', ProductsView.as_view(), name='home'),
-    url(r'^addproducts/$', AddProductView.as_view(), name='Add Products'),
+    url(r'^$', HomeView.as_view(), name='home'),
+    url(r'^productlist', ProductsView.as_view(), name='producttable'),
+    url(r'^addproducts/$', AddProductView.as_view(), name='addproduct'),
 ]
