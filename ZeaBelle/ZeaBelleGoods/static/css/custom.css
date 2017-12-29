@@ -1,3 +1,7 @@
+body {
+	padding-top: 70px;
+}
+
 .navbar-default {
   background-color: #42f474;
   background-image: none;
@@ -29,21 +33,9 @@ input:not([type=submit]):not([type=file]) {
     margin: 0 0 10px 0;
 }
 
-.thumbnail{
-    height: 300px;
-    overflow: hidden;
-}
-
-.thumbnail img{
-    height: 100%;
-    width: auto;
-    max-height: 50%;
-    max-width: 50%
-}
-
 .caption h2{
     font-family: 'Roboto';
-    font-size: 1em;
+    font-size: 2em;
 }
 
 .caption h4{
@@ -51,12 +43,54 @@ input:not([type=submit]):not([type=file]) {
     font-size: 1em;
 }
 
-.row {
-    display: table;
+.thumbnail{
+    height: 300px;
+    overflow: hidden;
 }
 
-[class*="col-"] {
-    float: none;
-    display: table-cell;
-    vertical-align: top;
+.thumbnail img{
+    height: 100%;
+    width: 75%;
+    max-height: 50%;
+    max-width: 75%;
+    padding: 3px;
 }
+
+.view {
+  overflow: hidden;
+  position: relative;
+  cursor: default; }
+  .view .mask {
+    background-attachment: fixed; }
+  .view .mask,
+  .view .full-bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0; }
+  .view img, .view video {
+    display: block;
+    position: relative; }
+
+.hm-zoom img,
+.hm-zoom video,
+.overlay img,
+.overlay video {
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear; }
+
+.hm-zoom:hover .mask,
+.overlay:hover .mask {
+  opacity: 1; }
+
+.hm-zoom:hover img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.overlay .mask {
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out; }

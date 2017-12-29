@@ -2,11 +2,20 @@ from django.http import HttpResponse
 from django.views import View
 from django.shortcuts import render, redirect
 from ZeaBelleGoods.forms import *
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 class HomeView(View):
 
 	def get(self, request):
 		items = Products.objects.all()
+		paginator = Paginator(items, 10)
+		page = request.GET.get('page')
+		try:
+			all_items = paginator.page(page)
+		except PageNotAnInteger:
+			all_items = paginator.page(1)
+		except EmptyPage:
+			all_items = paginator.page(paginator.num_pages)
 		return render(request,'home.html',{'items':items})
 
 
