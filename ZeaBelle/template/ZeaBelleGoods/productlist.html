@@ -19,8 +19,66 @@
         <td> {{item.retail_price}} </td>
         <td> {{item.quantity}} </td>
         <td> {{item.description}} </td>
-        <td> <button>edit</button><button>add</button> </td>
+        <td>
+          <a href="{% url 'ZeaBelleGoods:edit-product' pk=item.pk  %}">edit</a>
+          <a href="#">add</a> <!-- data-toggle="modal" data-target="#add{{ forloop.counter }} -->
+          <a href="#" data-toggle="modal" data-target="#delete{{ forloop.counter }}">delete</a>
+        </td>
       </tr>
+
+      <div id="edit{{ forloop.counter }}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Edit {{ item.name }}</h4>
+            </div>
+            <div class="modal-body">
+              <!-- <p>{{ item.description }}</p> -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="add{{ forloop.counter }}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Add {{ item.name }}</h4>
+            </div>
+            <div class="modal-body">
+              <p>{{ item.description }}</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="delete{{ forloop.counter }}" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Delete {{ item.name }}</h4>
+            </div>
+            <div class="modal-body">
+              <form action="" method="post">
+                <p>Are you sure you want to delete the item?</p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <a href="{% url 'ZeaBelleGoods:delete-product' pk=item.pk  %}""><input class="btn btn-primary" type="submit" value="Confirm"></a>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       {% endfor %}
     </tbody>
   </table>

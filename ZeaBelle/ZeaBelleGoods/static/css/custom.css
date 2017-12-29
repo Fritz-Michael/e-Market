@@ -1,23 +1,35 @@
 body {
 	padding-top: 70px;
+	background-color: cornsilk;
+    background-size: 100%;
 }
+
+ #searchbar {
+ 	width: 130px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+ }
+
+ #searchbar:focus {
+ 	width: 100%;
+ }
 
 .navbar-default {
   background-color: #42f474;
   background-image: none;
   background-repeat: no-repeat;
+  min-height:30px;
  }
 
  .fields {
  	vertical-align: middle;
- 	/*text-align: center;*/
  }
 
 .cust-btn {
 	background-color: #42f474;
 }
 
-input:not([type=submit]):not([type=file]) {
+.fields input:not([type=submit]):not([type=file]) {
     border: 2px solid white; 
     -webkit-box-shadow: 
       inset 0 0 8px  rgba(0,0,0,0.1),
@@ -94,3 +106,4 @@ input:not([type=submit]):not([type=file]) {
   opacity: 0;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out; }
+
